@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://safelix.github.io/al-folio/sitemap.xml
+Sitemap: https://safelix.github.io/sitemap.xml
