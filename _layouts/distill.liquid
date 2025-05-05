@@ -22,6 +22,8 @@
     let publishedWhen = "{{ page.date | date: '%B %-d, %Y' }}";
     let title = "{{ page.title }}";
     let description = "{{ page.description }}";
+    let venue = "{{ page.publishedAt }}";
+    let year = "{{ page.publishedWhen }}";
 
     {
       let authorsBibtex = authors.map(e => `${e[0]}, ${e[1]}`).join(" and ");
@@ -31,13 +33,10 @@
       ).replace(" ", "").replace(/[\p{P}$+<=>^`|~]/gu, '').toLowerCase().trim();
       let bibtexTemplate = `
 @inproceedings{${bibtexTitleShorthand},
-  author = {${authorsBibtex}},
   title = {${title}},
-  abstract = {${description}},
-  booktitle = {ICLR Blogposts 2025},
-  year = {2025},
-  date = {${publishedWhen}},
-  note = {${window.location.href}},
+  author = {${authorsBibtex}},
+  booktitle = {${venue}},
+  year = {${year}},
   url  = {${window.location.href}}
 }
   `.trim();
@@ -52,7 +51,7 @@
         else academicLFI = academicLFI[0];
       }
       let academicTemplate = `
-${academicLFI}, "${title}", ICLR Blogposts, 2025.
+${academicLFI}, "${title}", ${venue}, ${year}.
 `.trim();
       document.getElementById("bibtex-academic-attribution").innerText = academicTemplate;
     }
@@ -180,6 +179,21 @@ ${academicLFI}, "${title}", ICLR Blogposts, 2025.
           </d-contents>
         {% endif %}
         {{ content }}
+
+      {% if page.publishedAt and page.publishedWhen %}
+        <d-article style="margin-top:1.5cm"></d-article>
+        <div id="bibtex-container" class="related highlight"">
+        For attribution in academic contexts, please cite this work as
+        <pre id="bibtex-academic-attribution">
+          PLACEHOLDER FOR ACADEMIC ATTRIBUTION
+        </pre>
+
+        BibTeX citation
+        <pre id="bibtex-box">
+          PLACEHOLDER FOR BIBTEX
+        </pre>
+        </div>
+      {% endif %}
       </d-article>
 
       <d-appendix>
