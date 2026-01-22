@@ -24,7 +24,7 @@ I am a doctoral fellow within the [Max Planck ETH Center for Learning Systems (C
 
 After obtaining my bachelor's and master's degrees in Computer Science from ETH Zürich, I pursued research internships with Thomas Hofmann in Zürich, [Nicolas Flammarion](https://people.epfl.ch/nicolas.flammarion) at EPFL Lausanne, and Antonio Orvieto in Tübingen.
 
-I am generally fascinated by the **learning dynamics of neural networks** and the interaction of parameterization, initialization, objective, and optimization in deep learning. In particular, I'm interested in potentially **self-supervised** methods for **long-range** modeling and **feature learning** of sequential data. To that end, I'm currently investigating fundamental aspects of **linear recurrent neural networks**.
+I am generally fascinated by the **learning dynamics of neural networks** and the interaction of parameterization, initialization, objective, and optimization in deep learning. In particular, I'm interested in potentially **self-supervised** methods for **long-range** modeling and **hierarchical feature learning** of sequential data. To that end, I'm currently investigating fundamental aspects of **linear recurrent neural networks**.
 <br/><br/>
 
 
